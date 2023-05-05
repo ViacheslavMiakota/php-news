@@ -1,13 +1,25 @@
 <?php
 session_start();
 require_once 'vendor/connect.php';
+
 if (isset($_SESSION['article']['id'])) {
   $articleId = $_SESSION['article']['id'];
 } else {
-  $articleId = 0;
+  echo "Ідентифікатор статті не встановлено";
+  exit;
 }
-?>
 
+if (!isset($_SESSION['userId'])) {
+  $_SESSION['userId'] = $_SESSION['user']['id'];
+}
+
+$userResult = mysqli_query($connect, "SELECT role FROM users WHERE id = '{$_SESSION['userId']}'");
+if ($userResult && mysqli_num_rows($userResult) > 0) {
+  $user = mysqli_fetch_assoc($userResult);
+  $role = isset($user['role']) ? $user['role'] : '';
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +46,15 @@ if (isset($_SESSION['article']['id'])) {
         <h3 class="mb-0"><?=  $_SESSION['article']['title']; ?></h3>
         <div class="mb-1 text-muted"><?= $_SESSION['article']['date'] ?></div>
         <p class="card-text mb-auto"><?= $_SESSION['article']['description'] ?></p>
-        <a href="/formAddedReviews.php" class="stretched-link" >Залишити відгук</a>
+        
+        <a href="/formAddedReviews.php"  >Залишити відгук</a>
       </div>
+      <?php if (isset($_SESSION['userId'])) {
+        if ($_SESSION['userId'] == $_SESSION['article']['userId'] || $role == 'admin') {
+        echo '<a href="vendor/deleteNews.php" class="btn btn-danger">Видалити новину</a>';
+        }
+        }
+      ?>
       <?php 
                      if (isset($_SESSION['message'])) {
                         echo '<p class="msg"> ' . $_SESSION['message'] . '</p>';
@@ -47,18 +66,25 @@ if (isset($_SESSION['article']['id'])) {
     <h3>Коментарі</h3>
     <div class="box-review">
     <?php 
-  $result = mysqli_query($connect, "SELECT * FROM `reviews` WHERE `articleId` = '$articleId'");
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo '<div class="card-review">
-      <p>' . $row['name'] . '</p>
-      <p class="card-text mb-auto">' . $row['reviewUser'] . '</p>
-      </div>';
-    }
-  } else {
-    echo '<div><p class="card-text mb-auto">Ще немає відгуків</p></div>';
-  }
-  ?>
+          $result = mysqli_query($connect, "SELECT * FROM `reviews` WHERE `articleId` = '$articleId'");
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<div class="card-review">
+                  <p>' . $row['name'] . '</p>
+                  <p class="card-text mb-auto">' . $row['reviewUser'] . '</p>';
+                  if ($_SESSION['userId'] == $row['userId'] || $role == 'admin') {
+                    echo '<form method="post" action="vendor/deleteReview.php">
+                        <input type="hidden" name="reviewId" value="' . $row['id'] . '">
+                        <button type="submit" class="btn btn-danger">Видалити коментар</button>
+                    </form>
+                    <a href="formEditReview.php?reviewId=' . $row['id'] . '" class="btn btn-primary">Редагувати</a>';
+                  }
+                  echo '</div>';
+            }
+          } else {
+  echo '<div><p class="card-text mb-auto">Ще немає відгуків</p></div>';
+}
+?>
     </div>
 
 </div>

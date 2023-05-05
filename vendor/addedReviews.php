@@ -2,9 +2,10 @@
 session_start();
 require_once 'connect.php';
 
+
 if (!isset($_SESSION['user']['name'], $_SESSION['user']['id'], $_SESSION['article']['id'])) {
     $_SESSION['message'] = 'Помилка: недостатньо даних для додавання коментаря';
-    header('Location: ../cardNews.php');
+    header('Location: ../formAddedReviews.php');
     exit();
 }
 
@@ -15,7 +16,7 @@ $reviewUser = isset($_POST['reviewUser']) ? $_POST['reviewUser'] : '';
 
 if (empty($reviewUser)) {
     $_SESSION['message'] = 'Помилка: введіть коментар';
-    header('Location: ../cardNews.php');
+    header('Location: ../formAddedReviews.php');
     exit();
 }
 

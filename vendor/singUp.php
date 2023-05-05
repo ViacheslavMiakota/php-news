@@ -7,6 +7,7 @@ $name = $_POST['name'];
 $login = $_POST['login'];
 $pass = $_POST['pass'];
 $pass_confirm = $_POST['pass_confirm'];
+$role = $_POST['role'];
  
 if ($pass !== $pass_confirm){$_SESSION['message'] = 'Паролі не збігаються';
     header('Location: ../register.php');
@@ -48,8 +49,8 @@ if (mysqli_num_rows($result) > 0) {
     exit();
 }
 
-mysqli_query($connect, "INSERT INTO `users` (  `login`, `pass`, `name`, `avatar`)
-VALUES( '$login', '$pass', '$name', '$path')");
+mysqli_query($connect, "INSERT INTO `users` (  `login`, `pass`, `name`, `avatar`, `role`)
+VALUES( '$login', '$pass', '$name', '$path', '$role')");
 
 $_SESSION['message'] = 'Реєстрація успішна';
 header('Location: ../login.php');

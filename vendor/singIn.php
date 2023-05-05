@@ -2,6 +2,7 @@
 
 session_start();
 require_once 'connect.php';
+$_SESSION['userId'] = $userId;
 
 $login = $_POST['login'];
 $pass = md5($_POST['pass']);

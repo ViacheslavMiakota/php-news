@@ -4,6 +4,7 @@ session_start();
 if ($_SESSION['user']){
     header('Location: vendor/postNews.php');
 }
+
 ?>
 
 <!DOCTYPE html>

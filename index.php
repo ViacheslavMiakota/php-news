@@ -41,14 +41,14 @@ session_start();
                             </strong>
                             <h3 class="mb-0"><?= substr($article['title'], 0, 70) ?></h3>
                             <div class="mb-1 text-muted">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;"><?= $article['date'] ?></font>
-                                </font>
+                                <div style="vertical-align: inherit;">
+                                    <p style="vertical-align: inherit;"><?= $article['date'] ?></p>
+                                </div>
                             </div>
                             <p class="card-text mb-auto">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;"><?= substr($article['description'], 0, 120) ?></font>
-                                </font>
+                                <div style="vertical-align: inherit;">
+                                    <p style="vertical-align: inherit;"><?= substr($article['description'], 0, 120) ?></p>
+                                </div>
                             </p>
                             <a href="vendor/postNewsId.php?id=<?= $article['id'] ?>" class="stretched-link">Продовжити читання →</a>
                         </div>

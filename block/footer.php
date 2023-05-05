@@ -1,27 +1,11 @@
 <footer class="blog-footer">
-  <p>
-    <font style="vertical-align: inherit;">
-      <font style="vertical-align: inherit;">News today створений </font>
-      <font style="vertical-align: inherit;">@miakota </font><a href="https://twitter.com/mdo">
-        <font style="vertical-align: inherit;">для </font>
-      </a>
-    </font><a href="https://dev-branch.com/">
-      <font style="vertical-align: inherit;">
-        <font style="vertical-align: inherit;">DevBranch</font>
-      </font>
-    </a>
-    <font style="vertical-align: inherit;">
-      <font style="vertical-align: inherit;"> .</font>
-    </font><a href="https://twitter.com/mdo">
-      <font style="vertical-align: inherit;"></font>
-    </a>
-    <font style="vertical-align: inherit;"></font>
-  </p>
-  <p>
-    <a href="#">
-      <font style="vertical-align: inherit;">
-        <font style="vertical-align: inherit;">Догори</font>
-      </font>
-    </a>
-  </p>
+  <div>
+    <div style="vertical-align: inherit;">
+      <p style="vertical-align: inherit;">News today створений </p>
+      <a href="https://www.linkedin.com/in/viacheslav-miakota/">@miakota</a>
+      <p style="vertical-align: inherit;">для</p>
+    </div>
+    <a href="https://dev-branch.com/">DevBranch</a>
+  </div>
+    <a href="#">Догори</a>
 </footer>
