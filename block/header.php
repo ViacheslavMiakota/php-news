@@ -35,7 +35,7 @@ if (!isset($_SESSION['user'])) {
     <?php
         if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
             ?>
-            <a class="btn btn-sm btn-outline-secondary" href="vendor/singIn.php">
+            <a class="btn btn-sm btn-outline-secondary" href="../login.php">
                 <div style="vertical-align: inherit;">
                     <p style="vertical-align: inherit;">Увійти</p>
                 </div>

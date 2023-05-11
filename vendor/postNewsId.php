@@ -2,6 +2,7 @@
 
 session_start();
 require_once 'connect.php';
+$_SESSION['userId'] = $userId;
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
   $id = intval($_GET['id']);
@@ -23,7 +24,6 @@ if (!$result) {
 if (mysqli_num_rows($result) > 0) {
   $article = mysqli_fetch_assoc($result);
   $_SESSION['article'] = $article;
-  
   mysqli_free_result($result);
   mysqli_close($connect);
   header('Location: ../cardNews.php?id='. $id);

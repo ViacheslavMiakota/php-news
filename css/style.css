@@ -19,6 +19,11 @@ body {
   background-color: #f9f9f9;
   border-top: 0.05rem solid #e5e5e5;
 }
+.text-footer{
+  display: flex;
+  justify-content: center;
+  gap:5px;
+}
 .blog-login {
   padding: 2.5rem 0; 
   text-align: center;
@@ -67,6 +72,14 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 12px;
+}
+.link-news{
+  padding: 8px;
+font-size: 24px;
+color: #eaeae7f6;
+background-color: rgb(98, 96, 89);
+border-radius: 4px;
+
 }
 .card-news{
   display: flex;

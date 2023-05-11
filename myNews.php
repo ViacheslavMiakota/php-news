@@ -24,8 +24,8 @@ session_start();
             <a href=""><?= $_SESSION['user']['login'] ?></a> 
         </div>  
     <div class="item-news">
-      <a class="link-secondary" href="/formAddedNews.php">Додати новину</a>
-      <a class="link-secondary logout" href="vendor/logout.php">Вийти</a>
+      <a class="link-news" href="/formAddedNews.php">Додати новину</a>
+      <a class="link-news" href="vendor/logout.php">Вийти</a>
     </div>
         <h3 class="title-news">My news</h3>
         <?php 
