@@ -1,5 +1,24 @@
 <?php
 session_start();
+// Підключення до бази даних
+$connect = new mysqli('localhost:8989', 'root', 'password', 'register-bd');
+if (!$connect) {
+    die('Error connect to DataBase');
+}
+
+// Отримання всіх новин з бази даних
+$query = "SELECT * FROM `articles`";
+$result = $connect->query($query);
+if (!$result) {
+    die('Error getting news from DataBase');
+}
+
+// Збереження новин в сесії
+$articles = [];
+while ($row = $result->fetch_assoc()) {
+    $articles[] = $row;
+}
+$_SESSION['articles'] = $articles;
 ?>
 
 <!DOCTYPE html>
@@ -20,15 +39,15 @@ session_start();
         <h3 class="title-news">News today</h3>
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="#">World</a>
-                <a class="p-2 link-secondary" href="#">Technology</a>
-                <a class="p-2 link-secondary" href="#">Design</a>
-                <a class="p-2 link-secondary" href="#">Culture</a>
-                <a class="p-2 link-secondary" href="#">Business</a>
-                <a class="p-2 link-secondary" href="#">Politics</a>
-                <a class="p-2 link-secondary" href="#">Science</a>
-                <a class="p-2 link-secondary" href="#">Style</a>
-                <a class="p-2 link-secondary" href="#">Travel</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=World">World</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Technology">Technology</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Design">Design</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Culture">Culture</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Business">Business</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Politics">Politics</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Science">Science</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Style">Style</a>
+                <a class="p-2 link-secondary" href="genreNews.php?genre=Travel">Travel</a>
             </nav>
         </div>
         <div class="card-news">

@@ -31,15 +31,15 @@ session_start();
         <div class="col-12">
           <label for="genre" class="form-label">Жанр новини</label>
           <select id="genre" name="genre" size="2">
-            <option value="world">Новини світу</option>
-            <option value="technology">Технології</option>
-            <option value="desing">Дизайн</option>
-            <option value="business">Бізнес</option>
-            <option value="politics">Політика</option>
-            <option value="science">Наука</option>
-            <option value="culture">Культура</option>
-            <option value="style">Стиль</option>
-            <option value="travel">Подорожі</option>
+            <option value="World">Новини світу</option>
+            <option value="Technology">Технології</option>
+            <option value="Desing">Дизайн</option>
+            <option value="Business">Бізнес</option>
+            <option value="Politics">Політика</option>
+            <option value="Science">Наука</option>
+            <option value="Culture">Культура</option>
+            <option value="Style">Стиль</option>
+            <option value="Travel">Подорожі</option>
           </select>
           <input type="button" name="genre" id="genre" value="Обрати">
         </div>
