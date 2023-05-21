@@ -1,10 +1,7 @@
 <?php
 session_start();
 // Підключення до бази даних
-$connect = new mysqli('localhost:8989', 'root', 'password', 'register-bd');
-if (!$connect) {
-    die('Error connect to DataBase');
-}
+require_once 'vendor/connect.php';
 
 // Отримання всіх новин з бази даних
 $query = "SELECT * FROM `articles`";
