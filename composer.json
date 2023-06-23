@@ -1,0 +1,19 @@
+{
+    "name": "news/php",
+    "description": "myNews",
+    "type": "project",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "News\\Php\\": "application/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ViacheslavMiakota",
+            "email": "miakotaviacheslav1@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
