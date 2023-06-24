@@ -1,7 +1,8 @@
 <?php
-session_start();
-require_once './../models/usersModel.php';
 
+require_once './application/models/usersModel.php';
+
+$db = new Database();
 $userModel = new UserModel($db);
 
 $login = $_POST['login'];
@@ -18,7 +19,7 @@ if ($user) {
         "role" => $user['role'],
     ];
 
-    header('Location: /application/controllers/postMyNews.php');
+    header('Location: /index.php?page=postMyNews');
     exit();
 } else {
     $_SESSION['message'] = 'Невірний пароль або логін';

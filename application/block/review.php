@@ -1,7 +1,14 @@
 <?php
 
+require_once './../controllers/connect.php';
 require_once './../models/reviewsModel.php';
 require_once './../models/usersModel.php';
+
+$db = new Database();
+
+$reviewsModel = new Review($db);
+$articleId = $_SESSION['articleId'];
+$reviews = $reviewsModel->getReviewsForArticle($articleId);
 
 $isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 'admin';
 ?>
@@ -13,7 +20,7 @@ $isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 'adm
                 <p><?= $row['name'] ?></p>
                 <p class="card-text mb-auto"><?= $row['reviewUser'] ?></p>
                 <?php if ($isAdmin || $_SESSION['user']['id'] == $row['userId']) : ?>
-                    <form method="post" action="/application/controllers/deleteReview.php">
+                    <form method="post" action="/index.php?page=deleteReview">
                         <input type="hidden" name="reviewId" value="<?= $row['id'] ?>">
                         <button type="submit" class="btn btn-danger">Видалити коментар</button>
                     </form>

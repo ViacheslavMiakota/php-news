@@ -12,14 +12,13 @@
 
 <body>
     <?php require "./../block/header.php" ?>
-    <div class="container mt-5 mb-5">
-        <h3>Вхід</h3>
-        <?php require "./../form/formLogin.php" ?>
-        <p style="vertical-align: inherit;">Якщо ви не зареєстровані? </p>
+    <?php require "./../block/message.php" ?>
+        <div class="container mt-5 mb-5">
+            <h3>Вхід</h3>
+            <?php require "./../form/formLogin.php" ?>
+            <p style="vertical-align: inherit;">Якщо ви не зареєстровані? </p>
             <a class="p-2 text-dark" href="./register.php">Зареєструватись</a>
-            </div>
-            <?php require "./../block/message.php" ?>
-    </div>
+        </div>
     <?php require "./../block/footer.php" ?>
 </body>
 

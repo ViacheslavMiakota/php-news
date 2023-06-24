@@ -30,8 +30,8 @@ $articles = isset($_SESSION['articles']) ? $_SESSION['articles'] : array(); // �
             <h4 style="margin: 10px 0;"><?= $_SESSION['user']['role'] ?></h4>
         </div>  
     <div class="item-news">
-      <a class="link-news" href="./../controllers/addedNews.php">Додати новину</a>
-      <a class="link-news" href="./../controllers/logout.php">Вийти</a>
+      <a class="link-news" href="/application/views/addedNews.php">Додати новину</a>
+      <a class="link-news" href="/index.php?page=logout">Вийти</a>
     </div>
         <h3 class="title-news">My news</h3>
         <?php require "./../block/message.php" ?>

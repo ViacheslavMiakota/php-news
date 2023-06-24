@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 session_start();
-require_once './../models/reviewsModel.php';;
+require_once './application/models/reviewsModel.php';;
 
 if (isset($_POST['reviewId'])) {
     $id = $_POST['reviewId'];

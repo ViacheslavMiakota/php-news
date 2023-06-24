@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-require_once './../models/newsModel.php';
+require_once './application/models/newsModel.php';
 $db = new Database();
 $newsModel = new News($db);
 

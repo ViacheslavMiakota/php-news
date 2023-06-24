@@ -1,7 +1,5 @@
 <?php
 
-require_once '../controllers/connect.php';
-
 class UserModel {
     private $db;
     

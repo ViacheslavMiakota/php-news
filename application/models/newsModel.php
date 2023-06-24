@@ -1,7 +1,5 @@
 <?php
 
-require_once './../controllers/connect.php';
-
 class News {
     private $db;
 
@@ -46,6 +44,6 @@ class News {
     }
     
 }
-
+// $db = new Database();
 
 

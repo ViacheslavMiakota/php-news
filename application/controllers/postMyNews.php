@@ -1,12 +1,13 @@
 <?php
 
-session_start();
-require_once './../models/newsModel.php';
-require_once './../models/usersModel.php';
+require_once './application/models/newsModel.php';
+require_once './application/models/usersModel.php';
+require_once './application/models/reviewsModel.php';
 
 $db = new Database();
 $newsModel = new News($db);
 $userModel = new UserModel($db);
+
 
 $userId = $_SESSION['user']['id'];
 
@@ -24,5 +25,3 @@ if ($articles) {
 }
 
 
-
- 

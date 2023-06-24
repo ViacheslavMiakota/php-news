@@ -2,4 +2,4 @@
 session_start();
 unset($_SESSION['user']);
 unset($_SESSION['userId']);
-header('Location: ./postNews.php');
+header('Location: /index.php?page=postNews');

@@ -1,13 +1,16 @@
 <?php
 
 require_once './../models/reviewsModel.php';
+require_once './../controllers/connect.php';
 
 $reviewUser = '';
 $articleId = $_SESSION['article']['id'];
 
+$db = new Database();
+
 try {
-    $reviewModel = new Review($db);
-    $reviews = $reviewModel->getReviewsByArticleId($articleId);
+    $reviewsModel = new Review($db);
+    $reviews = $reviewsModel->getReviewsForArticle($articleId);
 
     if (!empty($reviews)) {
         $reviewUser = isset($reviews[0]['reviewUser']) ? $reviews[0]['reviewUser'] : '';
@@ -34,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<form class="needs-validation" method="post" action="/application/controllers/editReview.php">
+<form class="needs-validation" method="post" action="/index.php?page=editReview">
     <div class="row g-3">
         <div class="col-12">
             <label for="title" class="form-label">Заголовок</label>

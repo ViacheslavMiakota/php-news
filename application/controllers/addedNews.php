@@ -1,8 +1,7 @@
 <?php
 
-session_start();
-require_once './../models/usersModel.php';
-require_once './../models/newsModel.php';
+require_once './application/models/usersModel.php';
+require_once './application/models/newsModel.php';
 $db = new Database();
 $newsModel = new News($db);
 
@@ -16,7 +15,7 @@ $userId = isset($_SESSION['user']['id']) ? $_SESSION['user']['id'] : null;
 
 $path = 'uploads/' . time() . '_' . $_FILES['photo']['name'];
 
-if (!move_uploaded_file($_FILES['photo']['tmp_name'], '../../' . $path)) {
+if (!move_uploaded_file($_FILES['photo']['tmp_name'], './' . $path)) {
     $_SESSION['message'] = 'Помилка завантаження фото';
     header('Location: /application/views/addedNews.php');
     exit();
@@ -52,7 +51,7 @@ $result->execute([
 ]);
 
 $_SESSION['message'] = 'Новину додано';
-header('Location: /application/views/myNews.php');
+header('Location: /index.php?page=postMyNews');
 exit();
 
 

@@ -30,17 +30,17 @@ if (!isset($_SESSION['user'])) {
           <path d="M21 21l-5.2-5.2"></path>
         </svg>
       </a>
-    <a class="p-2 text-dark" href="./../controllers/postNews.php">Головна</a>
+    <a class="p-2 text-dark" href="/index.php?page=postNews">Головна</a>
     <?php
         if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
             ?>
-            <a class="btn btn-sm btn-outline-secondary" href="./../views/login.php">
+            <a class="btn btn-sm btn-outline-secondary" href="/application/views/login.php">
                 <div style="vertical-align: inherit;">
                     <p style="vertical-align: inherit;">Увійти</p>
                 </div>
             </a>
         <?php } else { ?>
-            <a class="p-2 text-dark" href="./../controllers/postMyNews.php">Moї новини</a>
+            <a class="p-2 text-dark" href="/index.php?page=postMyNews">Moї новини</a>
         <?php } ?>
     </div>
   </div>

@@ -1,10 +1,3 @@
-<?php
-
-session_start();
-$articles = isset($_SESSION['articles']) ? $_SESSION['articles'] : array(); // Отримати дані з сесії
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,17 +11,17 @@ $articles = isset($_SESSION['articles']) ? $_SESSION['articles'] : array(); // �
 </head>
 
 <body>
-    <?php require "./../block/header.php" ?>
+    <?php require "./application/block/header.php" ?>
     <div class="container mt-5">
         <h3 class="title-news">News today</h3>
-        <?php require "./../block/genre.php" ?>
+        <?php require "./application/block/genre.php" ?>
         <div class="card-news">
             <?php foreach ($articles as $article) : ?>
-                <?php require "./../block/cardNews.php" ?>
+                <?php require "./application/block/cardNews.php" ?>
             <?php endforeach; ?>
         </div>
     </div>
-    <?php require "./../block/footer.php" ?>
+    <?php require "./application/block/footer.php" ?>
 </body>
 
 </html>

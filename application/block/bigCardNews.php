@@ -1,7 +1,7 @@
 <?php
 
-require_once '../models/newsModel.php';
-require_once '../models/usersModel.php'; 
+// require_once '../models/newsModel.php';
+// require_once '../models/usersModel.php'; 
 
 ?>
 
@@ -25,7 +25,7 @@ require_once '../models/usersModel.php';
     </div>
 
     <?php if (isset($_SESSION['user']['role']) && ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['id'] == $_SESSION['article']['userId'])) : ?>
-        <a href="/application/controllers/deleteNews.php" class="btn btn-danger">Видалити новину</a>
+        <a href="/index.php?page=deleteNews" class="btn btn-danger">Видалити новину</a>
     <?php endif; ?>
 
     <?php require "./../block/message.php" ?> 

@@ -1,6 +1,6 @@
 <?php
 
-require_once './../models/reviewsModel.php';
+require_once './application/models/reviewsModel.php';
 
 $id = $_POST['reviewId'];
 $reviewUser = $_POST['reviewUser'];
@@ -14,7 +14,7 @@ $result = $reviewModel->updateReviewById($id, $reviewUser);
 
 if ($result) {
     // Оновити коментар в сесії
-    $reviews = $reviewModel->getReviewsByArticleId($articleId);
+    $reviews = $reviewModel->getReviewsForArticle($articleId);
     $_SESSION['reviews'] = $reviews;
     
     $_SESSION['message'] = "Коментар успішно змінено";

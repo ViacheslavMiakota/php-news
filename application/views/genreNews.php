@@ -1,7 +1,16 @@
 <?php
 
 session_start();
+require_once './../controllers/connect.php';
+$db = new Database();
 
+// Виконуємо запит до бази даних, щоб отримати статті
+$query = "SELECT * FROM articles";
+$stmt = $db->prepare($query);
+$stmt->execute();
+
+$articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $articles = isset($_SESSION['articles']) ? $_SESSION['articles'] : array();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +33,7 @@ session_start();
         <div class="container mt-5"> 
         <?php require "../block/message.php" ?>
         <div class="card-news">
-        <?php foreach ($_SESSION['articles'] as $article) : ?>
+        <?php foreach ($articles as $article) : ?>
             <?php if ($article['genre'] == $_GET['genre']) : ?>
             <?php require "../block/cardNews.php" ?> 
             <?php endif; ?>

@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require_once './../models/reviewsModel.php';
+require_once './application/models/reviewsModel.php';
+$db = new Database();
 
 if (!isset($_SESSION['user']['name'], $_SESSION['user']['id'], $_SESSION['article']['id'])) {
     $_SESSION['message'] = 'Помилка: недостатньо даних для додавання коментаря';

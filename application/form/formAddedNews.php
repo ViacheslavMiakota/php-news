@@ -1,4 +1,4 @@
-<form class="needs-validation" novalidate="" method="post" enctype="multipart/form-data" action="/application/controllers/addedNews.php">
+<form class="needs-validation" novalidate="" method="post" enctype="multipart/form-data" action="/index.php?page=addedNews">
       <div class="row g-3">
         <div class="col-12">
           <label for="title" class="form-label">Заголовок новини</label>

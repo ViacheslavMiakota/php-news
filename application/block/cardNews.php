@@ -5,10 +5,13 @@
         <h3 class="mb-0"><?= substr($article['title'], 0, 70) ?></h3>
         <div class="mb-1 text-muted"><?= $article['date'] ?></div>
         <p class="card-text mb-auto"><?= substr($article['description'], 0, 120) ?></p>
-        <a href="/application/controllers/postNewsId.php?id=<?= $article['id'] ?>" class="stretched-link">Продовжити читання →</a>
+        <a href="/index.php?page=postNewsId&id=<?= $article['id'] ?>" class="stretched-link">Продовжити читання →</a>
       </div>
       <div class="col-auto d-none d-lg-block img">
         <img src="../../<?= $article['photo'] ?>" class="img-thumbnail" width="200px" height="250" alt="photo news">
       </div>
     </div>
 </div>
+
+
+

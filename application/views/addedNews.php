@@ -1,9 +1,5 @@
 <?php
-
 session_start();
-require_once './../models/newsModel.php';
-require_once './../models/usersModel.php';
-
 ?>
 
 <!DOCTYPE html>

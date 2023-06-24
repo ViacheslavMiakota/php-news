@@ -4,7 +4,7 @@ require_once '../models/newsModel.php';
 require_once '../models/usersModel.php'; 
 ?>
 
-<form class="needs-validation" method="post" action="/application/controllers/addedReviews.php">
+<form class="needs-validation" method="post" action="/index.php?page=addedReviews">
     <div class="row g-3">
         <div class="col-12">
         <label for="title" class="form-label">Заголовок</label>

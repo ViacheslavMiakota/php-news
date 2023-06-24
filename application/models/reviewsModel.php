@@ -1,7 +1,5 @@
 <?php
 
-require_once './../controllers/connect.php';
-
 class Review {
     private $db;
 
@@ -42,13 +40,6 @@ class Review {
 
         return $result;
     }
-    public function getReviewsByArticleId($articleId) {
-        $query = "SELECT * FROM `reviews` WHERE `articleId` = :articleId";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':articleId', $articleId, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
     public function updateReviewById($id, $reviewUser) {
         $query = "UPDATE `reviews` SET `reviewUser` = :reviewUser WHERE `id` = :id";
         $stmt = $this->db->prepare($query);
@@ -65,4 +56,5 @@ class Review {
 
         return $reviews;
     }
+    
 }

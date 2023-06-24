@@ -1,9 +1,10 @@
 <?php
+require_once './../controllers/connect.php';
 
 session_start();
-require_once './../models/newsModel.php';
-require_once './../models/usersModel.php';
-$article = isset($_SESSION['article']) ? $_SESSION['article'] : array(); // Отримати дані з сесії]
+// require_once './../models/newsModel.php';
+// require_once './../models/usersModel.php';
+// $article = isset($_SESSION['article']) ? $_SESSION['article'] : array(); // Отримати дані з сесії]
 
 ?>
 
@@ -25,7 +26,7 @@ $article = isset($_SESSION['article']) ? $_SESSION['article'] : array(); // От
     <?php require "./../block/bigCardNews.php" ?>
       <div class="row p-5 g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bgc">
       <h3>Коментарі</h3>
-      <?php require "./../controllers/postReviews.php" ?>
+      <?php require "./../block/review.php" ?>
       </div>
   <?php require "./../block/footer.php" ?>
 

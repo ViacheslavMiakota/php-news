@@ -3,10 +3,9 @@
     padding: 2.5rem 0; 
     text-align: center;
   }
-  .card-title{
-    width: calc(100% / 2 - 20px);
-   
-   margin: 4xp;
+.card-title{
+  width: calc(100% / 2 - 20px);
+  margin: 4xp;
       
     }
   .card-item {
@@ -46,4 +45,10 @@
     margin-top: 20px;
     margin-bottom: 20px;
     
+  }
+  .img {
+    object-fit: cover;
+    height: 250px;
+    width: 200px;
+    border-radius: 2px;
   }
