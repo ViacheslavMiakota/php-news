@@ -1,4 +1,4 @@
-<form action="/index.php?page=singUp" method="post" enctype="multipart/form-data">
+<form action="/index.php?page=logUp" method="post" enctype="multipart/form-data">
             <input type="text" name="name" id="name" placeholder="Введіть Ваше Ім'я" class="form-control"><br>
             <label for="">Зображення</label>
             <input type="file" name="avatar" id="avatar" class="form-control"><br>

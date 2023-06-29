@@ -5,11 +5,10 @@ if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = '';
 }
 ?>
-
 <header class="blog-header lh-1 py-3">
   <div class="row flex-nowrap justify-content-between align-items-center">
     <div class="col-4 pt-1">
-      <a class="link-secondary" href="#">
+      <a class="link-secondary " href="#" type="button" data-modal-open>
         <div style="vertical-align: inherit;">
           <p style="vertical-align: inherit;">Підпишіться</p>
         </div>
@@ -34,7 +33,7 @@ if (!isset($_SESSION['user'])) {
     <?php
         if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
             ?>
-            <a class="btn btn-sm btn-outline-secondary" href="/application/views/login.php">
+            <a class="btn btn-sm btn-outline-secondary" href="/index.php?page=postLogIn">
                 <div style="vertical-align: inherit;">
                     <p style="vertical-align: inherit;">Увійти</p>
                 </div>
@@ -44,4 +43,5 @@ if (!isset($_SESSION['user'])) {
         <?php } ?>
     </div>
   </div>
+  <script src="./../js/modal.js"></script>
 </header>

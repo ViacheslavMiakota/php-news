@@ -8,13 +8,13 @@ class News {
     }
 
     public function getArticles() {
-        $query = "SELECT * FROM `articles`";
+        $query = "SELECT * FROM `articles` ORDER BY `date` DESC";
         $result = $this->db->query($query);
 
         return $result ?: [];
     }
     public function getArticlesByUserId($userId) {
-        $query = "SELECT * FROM `articles` WHERE `userId` = :userId";
+        $query = "SELECT * FROM `articles` WHERE `userId` = :userId ORDER BY `date` DESC";
         $params = array('userId' => $userId);
         $result = $this->db->query($query, $params);
 

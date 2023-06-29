@@ -18,13 +18,14 @@ if ($user) {
         "login" => $user['login'],
         "role" => $user['role'],
     ];
-
     header('Location: /index.php?page=postMyNews');
     exit();
+    
 } else {
     $_SESSION['message'] = 'Невірний пароль або логін';
-    header('Location: /application/views/login.php');
+    header('Location: /index.php?page=postLogIn');
     exit();
 }
 
-?>
+
+

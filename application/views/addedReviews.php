@@ -23,10 +23,11 @@ require_once './../models/reviewsModel.php';
 <body>
   <?php require "./../block/header.php" ?>
   <div class="container mt-5">
+  <?php require "./../block/message.php" ?>
     <div class="d-flex">
       <?php require "./../form/formAddedReviews.php" ?> 
     </div>
-      <?php require "./../block/message.php" ?>
+      
   </div>
   <?php require "./../block/footer.php" ?>
 </body>

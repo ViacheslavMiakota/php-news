@@ -14,6 +14,7 @@
     <?php require "./../block/header.php" ?>
     <?php require "./../block/message.php" ?>
         <div class="container mt-5 mb-5">
+            <?php require "./../block/message.php" ?>
             <h3>Вхід</h3>
             <?php require "./../form/formLogin.php" ?>
             <p style="vertical-align: inherit;">Якщо ви не зареєстровані? </p>

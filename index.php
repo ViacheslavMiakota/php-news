@@ -5,7 +5,7 @@ error_reporting(-1);
 require_once './application/controllers/connect.php';
 $db = new Database();
 
-$controllers  = array('postNews', 'singUp', 'singIn', 'postNewsId', 'postMyNews', 'postCardNews', 'logout', 'editReview', 'deleteReview', 'deleteNews', 'addedReviews', 'addedNews', '404');
+$controllers  = array('postNews', 'logUp', 'logIn', 'postNewsId', 'postAddedNews', 'postLogIn', 'postMyNews', 'postCardNews', 'logOut', 'editReview', 'deleteReview', 'deleteNews', 'addedReviews', 'addedNews', '404');
 $controller  = $_GET['page'] ?? 'postNews';
 
 

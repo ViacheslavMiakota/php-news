@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once './application/models/newsModel.php';
 
 $db = new Database();
@@ -14,4 +16,3 @@ if (!empty($articles)) {
     header('Location: ./application/views/topNews.php');
     exit();
 }
-

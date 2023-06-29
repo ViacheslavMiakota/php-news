@@ -2,7 +2,7 @@
 
 require_once './../controllers/connect.php';
 require_once './../models/reviewsModel.php';
-require_once './../models/usersModel.php';
+// require_once './../models/usersModel.php';
 
 $db = new Database();
 

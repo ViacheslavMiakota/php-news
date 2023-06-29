@@ -1,10 +1,10 @@
 <?php
+
 session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
   <meta charset="UTF-8">
@@ -17,9 +17,10 @@ session_start();
 
 <body>
   <?php require "./../block/header.php" ?>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
+    <?php require "./../block/message.php" ?>
       <?php require "./../form/formAddedNews.php" ?>
-      <?php require "./../block/message.php" ?>
+    
     </div>
   <?php require "./../block/footer.php" ?>
 </body>

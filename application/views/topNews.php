@@ -12,7 +12,7 @@
 
 <body>
     <?php require "./application/block/header.php" ?>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <h3 class="title-news">News today</h3>
         <?php require "./application/block/genre.php" ?>
         <div class="card-news">

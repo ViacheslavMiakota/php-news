@@ -1,9 +1,3 @@
-<?php
-
-// require_once '../models/newsModel.php';
-// require_once '../models/usersModel.php'; 
-
-?>
 
 <div class="row p-5 g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bgc">
       

@@ -1,8 +1,3 @@
-<?php
-// session_start();
-require_once '../models/newsModel.php';
-require_once '../models/usersModel.php'; 
-?>
 
 <form class="needs-validation" method="post" action="/index.php?page=addedReviews">
     <div class="row g-3">

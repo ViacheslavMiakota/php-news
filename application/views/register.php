@@ -12,8 +12,8 @@
 
 <body>
     <?php require "./../block/header.php" ?>
-    <?php require "./../block/message.php" ?>
     <div class="container mt-5 mb-5">
+    <?php require "./../block/message.php" ?>
         <h3>Реєстрація</h3>
         <?php require "./../form/formRegister.php" ?>  
     </div>

@@ -17,25 +17,25 @@ $path = 'uploads/' . time() . '_' . $_FILES['photo']['name'];
 
 if (!move_uploaded_file($_FILES['photo']['tmp_name'], './' . $path)) {
     $_SESSION['message'] = 'Помилка завантаження фото';
-    header('Location: /application/views/addedNews.php');
+    header('Location: /index.php?page=postAddedNews');
     exit();
 }
 
 if (trim($title) == '') {
     $_SESSION['message'] = 'Введіть заголовок новини';
-    header('Location: /application/views/addedNews.php');
+    header('Location: /index.php?page=postAddedNews');
     exit();
 }
 
 if (trim($description) == '') {
     $_SESSION['message'] = 'Введіть опис новини';
-    header('Location: /application/views/addedNews.php');
+    header('Location: /index.php?page=postAddedNews');
     exit();
 }
 
 if ($newsModel->checkDuplicateArticle($title, $date)) {
     $_SESSION['message'] = 'Новина під такою назвою сьогодні вже є. Перевірте назву та заповніть знову';
-    header('Location: /application/views/addedNews.php');
+    header('Location: /index.php?page=postAddedNews');
     exit();
 }
 
@@ -51,7 +51,7 @@ $result->execute([
 ]);
 
 $_SESSION['message'] = 'Новину додано';
-header('Location: /index.php?page=postMyNews');
+header('Location: ./../../../application/views/myNews.php');
 exit();
 
 
