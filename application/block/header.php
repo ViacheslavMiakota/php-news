@@ -20,11 +20,11 @@ if (!isset($_SESSION['user'])) {
 <header class="blog-header lh-1 py-3">
   <div class="row flex-nowrap justify-content-between align-items-center">
     <div class="col-4 pt-1">
-      <a class="link-secondary " href="#" type="button" data-modal-open>
         <div style="vertical-align: inherit;">
-          <p style="vertical-align: inherit;">Підпишіться</p>
+          <button type="button" class="link" style="vertical-align: inherit;" data-modal-open>
+          Підпишіться
+          </button>
         </div>
-      </a>
     </div>
     <div class="col-4 text-center">
       <a class="blog-header-logo text-dark" href="#">
@@ -55,5 +55,19 @@ if (!isset($_SESSION['user'])) {
         <?php } ?>
     </div>
   </div>
-  <script src="./../js/modal.js"></script>
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>
+        <svg class="icon-close">
+            <use href="/img/close.svg#icon-close_40px"></use>
+        </svg>
+        </button>
+        <h2 class="modal__title">Ваша підписка</h2>
+        <form action=" /index.php?page=postNews" method="post">
+            <input type="text" name="name" id="name" placeholder="Введіть Ваше Ім'я" class="form-control"><br>
+            <input type="email" name="login" placeholder="Введіть електронну адресу" class="form-control"><br>
+            <button type="submit" class="btn btn-success btn-news">Підписатись</button>
+        </form>
+    </div>
+</div>
 </header>

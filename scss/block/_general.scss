@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 20px;
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.37), white);
+    background-image: url(/img/fon-new.png);
 }
 .blog-footer {
   padding: 2.5rem 0;
@@ -35,4 +36,13 @@ body {
 }
 .blog-header {
   border-bottom: 3px solid #e5e5e5;
+}
+.btn-news{
+  background-color: rgba(13, 14, 56, 0.852);
+
+}
+.link{
+  border: none;
+  padding: 4px;
+  background-color: inherit;
 }

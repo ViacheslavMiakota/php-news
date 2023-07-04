@@ -1,7 +1,7 @@
 <?php
 
-require_once './../models/reviewsModel.php';
-require_once './../controllers/connect.php';
+require_once '/application/models/reviewsModel.php';
+require_once '/application/controllers/connect.php';
 
 $reviewUser = '';
 $articleId = $_SESSION['article']['id'];

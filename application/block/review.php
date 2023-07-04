@@ -26,7 +26,7 @@ $isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 'adm
                         <input type="hidden" name="reviewId" value="<?= $row['id'] ?>">
                         <button type="submit" class="btn btn-danger">Видалити коментар</button>
                     </form>
-                    <a href="/application/views/editReview.php?reviewId=<?= $row['id'] ?>" class="btn btn-primary">Редагувати</a>
+                    <a href="./application/views/editReview.php&reviewId=<?= $row['id'] ?>" class="btn btn-primary">Редагувати</a>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

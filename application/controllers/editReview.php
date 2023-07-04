@@ -1,7 +1,7 @@
 <?php
 
-require_once './application/models/reviewsModel.php';
-require_once './application/controllers/connect.php';
+require_once '/application/models/reviewsModel.php';
+require_once '/application/controllers/connect.php';
 
 $id = $_POST['reviewId'];
 $reviewUser = $_POST['reviewUser'];

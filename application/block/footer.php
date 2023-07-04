@@ -1,3 +1,4 @@
+
 <footer class="blog-footer">
   <div class="text-footer">
       <p style="vertical-align: inherit;"> News today створений </p>
@@ -9,3 +10,4 @@
       <img src="/img/Up.png" width="36px">
     </a>
 </footer>
+<script src="/js/modal.js"></script>
