@@ -13,7 +13,14 @@ try {
     $reviews = $reviewsModel->getReviewsForArticle($articleId);
 
     if (!empty($reviews)) {
-        $reviewUser = isset($reviews[0]['reviewUser']) ? $reviews[0]['reviewUser'] : '';
+        if (!empty($reviews)) {
+            foreach ($reviews as $review) {
+                if ($review['id'] == $_GET['reviewId']) {
+                    $reviewUser = $review['reviewUser'];
+                    break;
+                }
+            }
+        }
     }
 } catch (PDOException $error) {
     echo "Connection failed: " . $error->getMessage();
@@ -37,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<form class="needs-validation" method="post" action="/index.php?page=editReview">
+<form class="needs-validation" method="post" action="/index.php?page=editReview&reviewId=<?= $_GET['reviewId'] ?>">
     <div class="row g-3">
         <div class="col-12">
             <label for="title" class="form-label">Заголовок</label>
@@ -49,8 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="form-group">
         <label for="reviewUser" class="form-label">Виправте свій коментар</label>
         <textarea name="reviewUser" id="reviewUser" rows="3" class="form-control"><?= $reviewUser ?></textarea>
-        <input type="hidden" name="reviewId" value="<?= $reviews[0]['id'] ?>">
+        <input type="hidden" name="reviewId" value="<?= $_GET['reviewId'] ?>">
     </div>
     <br>
     <button class="w-100 mb-4 btn btn-primary btn-lg" type="submit">Змінити коментар</button><br>
 </form>
+

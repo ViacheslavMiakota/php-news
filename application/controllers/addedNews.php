@@ -51,7 +51,7 @@ $result->execute([
 ]);
 
 $_SESSION['message'] = 'Новину додано';
-header('Location: ./../../../application/views/myNews.php');
+header('Location: /index.php?page=postMyNews');
 exit();
 
 

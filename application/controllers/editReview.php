@@ -1,19 +1,20 @@
 <?php
 
 require_once './application/models/reviewsModel.php';
+require_once './application/controllers/connect.php';
 
 $id = $_POST['reviewId'];
 $reviewUser = $_POST['reviewUser'];
-
 $articleId = $_SESSION['article']['id'];
 
+$db = new Database();
 $reviewModel = new Review($db);
 
-//Оновити коментар
+// Оновити коментар
 $result = $reviewModel->updateReviewById($id, $reviewUser);
 
 if ($result) {
-    // Оновити коментар в сесії
+    // Оновити коментарі в сесії
     $reviews = $reviewModel->getReviewsForArticle($articleId);
     $_SESSION['reviews'] = $reviews;
     
@@ -22,6 +23,8 @@ if ($result) {
     $_SESSION['message'] = "Помилка: не вдалося змінити коментар";
 }
 
-header("Location: /application/views/cardNews.php");
+header("Location: /index.php?page=postNewsId&id=" . $articleId);
 exit();
+?>
+
 

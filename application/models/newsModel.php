@@ -44,6 +44,6 @@ class News {
     }
     
 }
-// $db = new Database();
+
 
 

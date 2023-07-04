@@ -2,7 +2,6 @@
 
 require_once './../controllers/connect.php';
 require_once './../models/reviewsModel.php';
-// require_once './../models/usersModel.php';
 
 $db = new Database();
 
@@ -17,6 +16,9 @@ $isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 'adm
     <?php if (!empty($reviews)) : ?>
         <?php foreach ($reviews as $row) : ?>
             <div class="card-review">
+                <?php
+                echo $row['id']
+                ?>
                 <p><?= $row['name'] ?></p>
                 <p class="card-text mb-auto"><?= $row['reviewUser'] ?></p>
                 <?php if ($isAdmin || $_SESSION['user']['id'] == $row['userId']) : ?>

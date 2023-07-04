@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <title>Login</title>
-</head>
+session_start();
+?>
 
 <body>
-    <?php require "./../block/header.php" ?>
-    <?php require "./../block/message.php" ?>
+    <?php 
+    $title = 'Login';
+    require "./../block/header.php" ?>
         <div class="container mt-5 mb-5">
             <?php require "./../block/message.php" ?>
             <h3>Вхід</h3>

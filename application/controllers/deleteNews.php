@@ -18,7 +18,7 @@ if (isset($_SESSION['article']['id'])) {
   $_SESSION['message'] = "Помилка: не вдалося видалити статтю";
 }
 
-header("Location: /application/views/myNews.php");
+header("Location: /index.php?page=postMyNews");
 exit();
 
 

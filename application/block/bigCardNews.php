@@ -18,7 +18,7 @@
         <?php endif; ?>
     </div>
 
-    <?php if (isset($_SESSION['user']['role']) && ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['id'] == $_SESSION['article']['userId'])) : ?>
+    <?php if (isset($_SESSION['user']['id']) && ($_SESSION['user']['role'] == 'admin' || $_SESSION['user']['id'] == $_SESSION['article']['userId'])) : ?>
         <a href="/index.php?page=deleteNews" class="btn btn-danger">Видалити новину</a>
     <?php endif; ?>
 
