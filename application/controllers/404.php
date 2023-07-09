@@ -1,3 +1,3 @@
 <?php
 session_start();
-header('Location: ./../../views/404.php');
+header('Location: ./application/views/404.php');

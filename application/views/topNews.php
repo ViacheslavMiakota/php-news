@@ -1,3 +1,4 @@
+
 <body>
     <?php
     $title = 'News today';

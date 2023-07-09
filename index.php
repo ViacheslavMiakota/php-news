@@ -1,12 +1,15 @@
 <?php
+
+use controllers\connect\Database;
+
 session_start();
 error_reporting(-1);
 
 require_once './application/controllers/connect.php';
 $db = new Database();
 
-$controllers  = array('postNews', 'logUp', 'logIn', 'postNewsId', 'postAddedNews', 'postLogIn', 'postMyNews', 'postCardNews', 'postRegister', 'logOut',
- 'editReview', 'deleteReview', 'deleteNews', 'addedReviews', 'addedNews', '404');
+$controllers  = array('postNews', 'logUp', 'logIn', 'postEditReview', 'postNewsId', 'postAddedNews', 'postLogIn', 'postMyNews', 'postCardNews', 'postRegister', 'logOut',
+ 'editReview', 'deleteReview', 'deleteNews', 'addedReviews', 'postAddedReviews', 'addedNews', '404');
 $controller  = $_GET['page'] ?? 'postNews';
 
 

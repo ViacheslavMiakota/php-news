@@ -52,6 +52,12 @@ body {
   background-color: inherit;
 }
 
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .blog-login {
   padding: 2.5rem 0;
   text-align: center;
@@ -166,7 +172,7 @@ body {
   top: 50%;
   left: 50%;
   border-radius: 24px;
-  border: solid 1px #19155e;
+  border: solid 1px #ffffff;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #c3bee9;

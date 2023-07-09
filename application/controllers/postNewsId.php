@@ -1,11 +1,13 @@
 <?php
 
+use controllers\connect\Database;
+
 require_once './application/models/newsModel.php';
 require_once './application/models/reviewsModel.php';
 
 $db = new Database();
-$newsModel = new News($db);
-$reviewsModel = new Review($db);
+$newsModel = new models\News($db);
+$reviewsModel = new models\Review($db);
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 if ($id === null) {

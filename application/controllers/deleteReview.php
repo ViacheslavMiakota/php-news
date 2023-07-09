@@ -7,7 +7,7 @@ require_once './application/models/reviewsModel.php';;
 if (isset($_POST['reviewId'])) {
     $id = $_POST['reviewId'];
     
-    $reviewModel = new Review($db);
+    $reviewModel = new models\Review($db);
 
     if ($reviewModel->deleteReviewById($id)) {
         $_SESSION['message'] = "Коментар успішно видалено";
@@ -15,11 +15,11 @@ if (isset($_POST['reviewId'])) {
         $_SESSION['message'] = "Помилка: не вдалося видалити коментар";
     }
   
-  header("Location: /application/views/cardNews.php");
+  header("Location: ./application/views/cardNews.php");
   exit();
 }else {
   $_SESSION['message'] = "Помилка: не вдалося видалити коментар";
-  header("Location: /application/views/cardNews.php");
+  header("Location: ./application/views/cardNews.php");
   exit();
 }
 

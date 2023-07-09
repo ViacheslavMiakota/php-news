@@ -1,5 +1,9 @@
 <?php
 
+namespace models;
+
+use controllers\connect\Database;
+
 class News {
     private $db;
 
@@ -32,14 +36,12 @@ class News {
         $stmt = $this->db->prepare($query);
         $stmt->execute($params);
         $result = $stmt->fetchColumn();
-
-    
         return $result > 0;
     }
     public function deleteArticle($id) {
         $sql = "DELETE FROM `articles` WHERE `id` = :id";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
         return $stmt->execute();
     }
     

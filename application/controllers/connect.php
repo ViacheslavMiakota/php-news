@@ -1,4 +1,8 @@
 <?php
+  
+namespace controllers\connect;
+
+
 
 class Database {
     private $link;
@@ -15,10 +19,10 @@ class Database {
         $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db_name'] . ';charset=' . $config['charset'];
 
         try {
-            $this->link = new PDO($dsn, $config['username'], $config['password']);
-            $this->link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->link = new \PDO($dsn, $config['username'], $config['password']);
+            $this->link->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $this->db = $this->link;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die('Помилка підключення до бази даних: ' . $e->getMessage());
         }
     }
@@ -28,7 +32,7 @@ class Database {
         try {
             $sth = $this->link->prepare($sql);
             return $sth->execute($params);
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die('Помилка виконання запиту: ' . $e->getMessage());
         }
     }
@@ -38,12 +42,12 @@ class Database {
         try {
             $sth = $this->link->prepare($sql);
             $sth->execute($params);
-            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+            $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
             if ($result === false) {
                 return [];
             }
             return $result;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die('Помилка виконання запиту: ' . $e->getMessage());
         }
     }

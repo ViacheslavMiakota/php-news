@@ -45,7 +45,7 @@ if (strlen($name) < 3 || strlen($name) > 50){
     exit();
 }
 
-$userModel = new UserModel($db); 
+$userModel = new models\UserModel($db); 
 $user = $userModel->createUser($login, $pass, $name, $path, $role);
 
 

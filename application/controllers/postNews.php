@@ -1,10 +1,11 @@
 <?php
 // session_start();
+use controllers\connect\Database;
 
 require_once './application/models/newsModel.php';
 
 $db = new Database();
-$newsModel = new News($db);
+$newsModel = new models\News($db);
 $articles = $newsModel->getArticles();
 
 if (!empty($articles)) {

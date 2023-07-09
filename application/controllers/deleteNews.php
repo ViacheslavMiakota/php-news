@@ -1,10 +1,13 @@
 <?php
+
+use controllers\connect\Database;
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once './application/models/newsModel.php';
 $db = new Database();
-$newsModel = new News($db);
+$newsModel = new models\News($db);
 
 if (isset($_SESSION['article']['id'])) {
   $id = $_SESSION['article']['id'];

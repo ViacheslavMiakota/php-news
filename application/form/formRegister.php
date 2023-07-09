@@ -9,9 +9,6 @@
                 <option value="user">Користувач</option>
                 <option value="admin">Адміністратор</option>
             </select><br>
-            <button type="submit" name="send" href="./../views/login.php" class="btn btn-success">Зареєструватись</button>
-            <div class="blog-login">
-            <p style="vertical-align: inherit;">Якщо ви уже зареєстровані? </p>
-            <a class="p-2 text-dark" href="./../views/login.php">Увійти</a>
-            </div>
+            <button type="submit" name="send" href="/index.php?page=postLogIn" class="btn btn-success">Зареєструватись</button>
+
 </form>

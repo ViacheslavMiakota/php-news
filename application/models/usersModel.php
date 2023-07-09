@@ -1,5 +1,7 @@
 <?php
 
+namespace models;
+
 class UserModel {
     private $db;
     
@@ -29,22 +31,22 @@ class UserModel {
         $query = "SELECT * FROM `users` WHERE `login` = :login AND `pass` = :pass";
         $statement = $this->db->prepare($query);
         $statement->execute(['login' => $login, 'pass' => $hashedPassword]);
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
     public function getUserRole($userId) {
         $sql = "SELECT role FROM users WHERE id = :userId";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':userId', $userId, \PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
     public function getArticlesByUserId($userId) {
         $query = "SELECT * FROM `articles` WHERE `userId` = :userId";
         $statement = $this->db->prepare($query);
-        $statement->bindValue(':userId', $userId, PDO::PARAM_INT);
+        $statement->bindValue(':userId', $userId, \PDO::PARAM_INT);
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
 ?>

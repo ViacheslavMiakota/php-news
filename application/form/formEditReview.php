@@ -1,7 +1,9 @@
 <?php
 
-require_once '/application/models/reviewsModel.php';
-require_once '/application/controllers/connect.php';
+use controllers\connect\Database;
+
+require_once './../models/reviewsModel.php';
+require_once './../controllers/connect.php';
 
 $reviewUser = '';
 $articleId = $_SESSION['article']['id'];
@@ -9,38 +11,31 @@ $articleId = $_SESSION['article']['id'];
 $db = new Database();
 
 try {
-    $reviewsModel = new Review($db);
-    $reviews = $reviewsModel->getReviewsForArticle($articleId);
-
+    $reviewModel = new models\Review($db);
+    $reviews = $reviewModel->getReviewsForArticle($articleId);
+if (!empty($reviews)) {
+    $reviewUser = isset($reviews[0]['reviewUser']) ? $reviews[0]['reviewUser'] : '';
     if (!empty($reviews)) {
-        if (!empty($reviews)) {
-            foreach ($reviews as $review) {
-                if ($review['id'] == $_GET['reviewId']) {
-                    $reviewUser = $review['reviewUser'];
-                    break;
-                }
+        foreach ($reviews as $review) {
+            if ($review['id'] == $_GET['reviewId']) {
+                $reviewUser = $review['reviewUser'];
+                break;
             }
         }
     }
-} catch (PDOException $error) {
+}
+} catch (\PDOException $error) {
     echo "Connection failed: " . $error->getMessage();
     die();
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reviewUser = $_POST['reviewUser'];
     $reviewId = $_POST['reviewId'];
 
     $result = $reviewModel->updateReviewById($reviewId, $reviewUser);
-
-    if ($result) {
-        $_SESSION['message'] = "Коментар успішно змінено";
-    } else {
-        $_SESSION['message'] = "Помилка: не вдалося змінити коментар";
-    }
-
-    header("Location: /application/views/cardNews.php");
-    exit();
 }
 ?>
 
@@ -49,8 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-12">
             <label for="title" class="form-label">Заголовок</label>
             <h4><?= $_SESSION['article']['title'] ?></h4>
-            <label for="title" class="form-label">Ім'я користувача</label>
-            <h4><?= $_SESSION['user']['name'] ?></h4>
         </div>
     </div>
     <div class="form-group">
@@ -61,4 +54,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br>
     <button class="w-100 mb-4 btn btn-primary btn-lg" type="submit">Змінити коментар</button><br>
 </form>
-

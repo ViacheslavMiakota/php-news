@@ -1,14 +1,16 @@
 <?php
 
-require_once '/application/models/reviewsModel.php';
-require_once '/application/controllers/connect.php';
+use controllers\connect\Database;
+
+require_once './application/models/reviewsModel.php';
+require_once './application/controllers/connect.php';
 
 $id = $_POST['reviewId'];
 $reviewUser = $_POST['reviewUser'];
 $articleId = $_SESSION['article']['id'];
 
 $db = new Database();
-$reviewModel = new Review($db);
+$reviewModel = new models\Review($db);
 
 // Оновити коментар
 $result = $reviewModel->updateReviewById($id, $reviewUser);

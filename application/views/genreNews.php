@@ -1,4 +1,5 @@
 <?php
+use controllers\connect\Database;
 
 require_once './../controllers/connect.php';
 $db = new Database();
@@ -8,7 +9,7 @@ $query = "SELECT * FROM articles";
 $stmt = $db->prepare($query);
 $stmt->execute();
 
-$articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$articles = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 ?>
 
 <body>

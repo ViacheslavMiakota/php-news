@@ -1,9 +1,11 @@
 <?php
 
+use controllers\connect\Database;
+
 require_once './application/models/usersModel.php';
 require_once './application/models/newsModel.php';
 $db = new Database();
-$newsModel = new News($db);
+$newsModel = new models\News($db);
 
 $title = isset($_POST['title']) ? $_POST['title'] : '';
 $description = isset($_POST['description']) ? $_POST['description'] : '';

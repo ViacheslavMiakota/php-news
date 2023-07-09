@@ -1,13 +1,16 @@
 <?php
+
+use controllers\connect\Database;
+
 session_start();
 
 require_once './application/models/usersModel.php';
 
-$db = new Database();
-$userModel = new UserModel($db);
-
 $login = $_POST['login'];
 $pass = $_POST['pass'];
+
+$db = new Database();
+$userModel = new models\UserModel($db);
 
 $user = $userModel->getUserByLoginAndPassword($login, $pass);
 
@@ -27,6 +30,6 @@ if ($user) {
     header('Location: /index.php?page=postLogIn');
     exit();
 }
-
+?>
 
 

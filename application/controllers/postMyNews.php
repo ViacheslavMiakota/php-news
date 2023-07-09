@@ -1,12 +1,14 @@
 <?php
 
+use controllers\connect\Database;
+
 require_once './application/models/newsModel.php';
 require_once './application/models/usersModel.php';
 
 
 $db = new Database();
-$newsModel = new News($db);
-$userModel = new UserModel($db);
+$newsModel = new models\News($db);
+$userModel = new models\UserModel($db);
 
 
 $userId = $_SESSION['user']['id'];
