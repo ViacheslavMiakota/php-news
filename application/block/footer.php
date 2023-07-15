@@ -6,8 +6,5 @@
       <p style="vertical-align: inherit;">  для  </p>
     <a href="https://dev-branch.com/">  DevBranch  </a>
   </div>
-    <a href="#">
-      <img src="/img/Up.png" width="36px">
-    </a>
 </footer>
 <script src="/js/modal.js"></script>

@@ -12,6 +12,7 @@
             <?php endforeach; ?>
         </div>
     </div>
+    <?php require "./application/block/up_btn.php" ?>
     <?php require "./application/block/footer.php" ?>
 </body>
 

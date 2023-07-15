@@ -62,7 +62,7 @@ if (!isset($_SESSION['user'])) {
             <use href="/img/close.svg#icon-close_40px"></use>
         </svg>
         </button>
-        <h2 class="modal__title">Ваша підписка</h2>
+        <h2 class="modal__title">Ваша підписка на розсилання новин</h2>
         <form action=" /index.php?page=postNews" method="post">
             <input type="text" name="name" id="name" placeholder="Введіть Ваше Ім'я" class="form-control"><br>
             <input type="email" name="login" placeholder="Введіть електронну адресу" class="form-control"><br>

@@ -21,7 +21,7 @@ $isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] == 'adm
             <div class="card-review">
                 <p><?= $row['name'] ?></p>
                 <p class="card-text mb-auto"><?= $row['reviewUser'] ?></p>
-                <?php if ($isAdmin || ($_SESSION['user']['id'] == $row['userId'])) : ?>
+                <?php if ($isAdmin || (isset($_SESSION['user']['id']) == $row['userId'])) : ?>
                     <form method="post" action="/index.php?page=deleteReview">
                         <input type="hidden" name="reviewId" value="<?= $row['id'] ?>">
                         <button type="submit" class="btn btn-danger">Видалити коментар</button>
