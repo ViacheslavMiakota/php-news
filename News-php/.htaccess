@@ -1,0 +1,16 @@
+AddDefaultCharset UTF-8
+
+# RewriteRule ^register?$ register.php [NC, L]
+# RewriteRule ^404?$ 404.php [NC, L]
+
+# ErrorDocument 404 /404.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} (.*)
+RewriteCond %{REQUEST_URI} /$ [NC]
+RewriteRule ^(.*)(/)$ $1 [L,R=301]

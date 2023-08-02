@@ -1,0 +1,26 @@
+{
+  "name": "news/php",
+  "description": "myNews",
+  "type": "project",
+  "license": "mit",
+  "autoload": {
+    "psr-4": {
+      "controllers\\Database\\": "application/controllers",
+      "models\\News\\": "application/models",
+      "models\\Review\\": "application/models",
+      "models\\User\\": "application/models"
+    }
+  },
+  "authors": [
+    {
+      "name": "ViacheslavMiakota",
+      "email": "miakotaviacheslav1@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "vlucas/phpdotenv": "^5.5",
+    "larapack/dd": "^1.1",
+    "phpmailer/phpmailer": "^6.8"
+  }
+}
